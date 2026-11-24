@@ -8,7 +8,7 @@ A full-stack online supermarket web app with a **customer store** and a **shopke
 
 ### 1. Shop page
 
-![Shop page](1-shop.png)
+![Shop page](https://github.com/kaifpathank/SmartBazar/blob/main/screenshots/1-shop.png)
 
 Customers see all 6 categories at the top and a grid of products with real photos. Each card shows the selling price, MRP, discount badge (for example 14% OFF), a low-stock warning ("Only 3 left") and an **Add** button. Customers can search and sort the list.
 
