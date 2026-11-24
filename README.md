@@ -14,7 +14,7 @@ Customers see all 6 categories at the top and a grid of products with real photo
 
 ### 2. Cart
 
-![Cart page](2-cart.png)
+![Cart page](https://github.com/kaifpathank/SmartBazar/blob/main/screenshots/2-cart.png)
 
 The cart shows the items, quantities and the bill (delivery is free above ₹499). When nothing is added, it shows an empty-cart message with a **Browse products** button.
 
@@ -26,19 +26,19 @@ Each customer can see their own orders with the order code, date, items, total a
 
 ### 4. Admin dashboard: overview
 
-![Admin overview page](4-admin-overview.png)
+![Admin overview page](https://github.com/kaifpathank/SmartBazar/blob/main/screenshots/4-admin-overview.png)
 
 The shopkeeper's home screen. It shows paid sales, total orders, orders still to fulfil, number of customers and active products. Below that, the **Low stock** box warns about products running out and the **Top selling** list shows the best sellers with units sold and revenue.
 
 ### 5. Admin dashboard: products
 
-![Admin products page](5-admin-products.png)
+![Admin products page](https://github.com/kaifpathank/SmartBazar/blob/main/screenshots/5-admin-products.png)
 
 The shopkeeper manages the catalog here: product photo, category, price, MRP and stock for all 25 products, with **Edit** and **Delete** buttons. The **+ Add product** button uploads a new product with its photo and **+ Category** adds a category. The Overview and Orders tabs show sales, low-stock alerts and order status updates.
 
 ### 6. Project code in VS Code
 
-![Project in VS Code](6-vscode.png)
+![Project in VS Code](https://github.com/kaifpathank/SmartBazar/blob/main/screenshots/6-vscode.png)
 
 The project opened in VS Code. The `public` folder holds the frontend (`index.html`, `styles.css`, `app.js`) and the `server` folder holds the backend (`index.js`, `db.js`, `seed.js`) and the SQLite database in `server/data`.
 
