@@ -20,7 +20,7 @@ The cart shows the items, quantities and the bill (delivery is free above ₹499
 
 ### 3. My orders
 
-![My orders page](3-my-orders.png)
+![My orders page](https://github.com/kaifpathank/SmartBazar/blob/main/screenshots/3-my-orders.png)
 
 Each customer can see their own orders with the order code, date, items, total amount, payment method (COD or UPI) and a status badge: Confirmed, Out for delivery or Delivered. Opening an order shows the tracking timeline.
 
