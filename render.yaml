@@ -1,0 +1,22 @@
+# Render.com blueprint (optional). Needs a paid plan for the persistent disk.
+services:
+  - type: web
+    name: smart-bazar
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 22
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_SIGNUP_CODE
+        sync: false
+      - key: DATA_DIR
+        value: /var/data
+    disk:
+      name: data
+      mountPath: /var/data
+      sizeGB: 1

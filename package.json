@@ -1,0 +1,20 @@
+{
+  "name": "smart-bazar",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Smart Bazar - supermarket web app (customer + admin)",
+  "scripts": {
+    "dev": "node --watch server/index.js",
+    "start": "node server/index.js"
+  },
+  "engines": { "node": ">=20.12" },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^12.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}
