@@ -1,4 +1,23 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { db } from './db.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const IMAGES_DIR = path.join(__dirname, '..', 'public', 'images');
+
+// "Kellogg's Corn Flakes" -> "kelloggs-corn-flakes"
+export const slugify = (name) =>
+  name.toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
+// If public/images/<slug>.jpg|jpeg|png|webp exists, use it as the product photo.
+function imageFor(name) {
+  const slug = slugify(name);
+  for (const ext of ['.jpg', '.jpeg', '.png', '.webp']) {
+    if (fs.existsSync(path.join(IMAGES_DIR, slug + ext))) return `/images/${slug}${ext}`;
+  }
+  return null; // no photo -> the app shows the emoji
+}
 
 const categories = [
   ['Fruits & Vegetables', '🥬'], ['Dairy & Eggs', '🥛'], ['Staples & Grains', '🌾'],
@@ -39,12 +58,12 @@ export function seedIfEmpty() {
   if (n > 0) return false;
   const insCat = db.prepare('INSERT INTO categories (name, emoji) VALUES (?, ?)');
   const insProd = db.prepare(
-    'INSERT INTO products (name, description, category_id, price, mrp, unit, stock, emoji) VALUES (?,?,?,?,?,?,?,?)'
+    'INSERT INTO products (name, description, category_id, price, mrp, unit, stock, emoji, image) VALUES (?,?,?,?,?,?,?,?,?)'
   );
   db.transaction(() => {
     const ids = categories.map(([name, emoji]) => insCat.run(name, emoji).lastInsertRowid);
     for (const [name, c, price, mrp, unit, stock, emoji, desc] of products) {
-      insProd.run(name, desc, ids[c], price, mrp, unit, stock, emoji);
+      insProd.run(name, desc, ids[c], price, mrp, unit, stock, emoji, imageFor(name));
     }
   })();
   return true;
