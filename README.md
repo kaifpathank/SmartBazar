@@ -2,7 +2,7 @@
 
 A full-stack online supermarket web app with a **customer store** and a **shopkeeper (admin) panel**. Customers browse products, fill a cart and place orders; the shopkeeper manages products (with photos), stock and order status.
 
-> **Live demo:** _add your Render link here_ · **Source:** _add your GitHub repo link here_
+> **Live demo:** https://smartbazar-vkj7.onrender.com/ · **Source:** https://github.com/kaifpathank/SmartBazar
 
 ## Screenshots
 
